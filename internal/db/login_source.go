@@ -12,7 +12,7 @@ import (
 	"net/textproto"
 	"strings"
 
-	"github.com/go-macaron/binding"
+	//"github.com/go-macaron/binding"
 	"github.com/unknwon/com"
 
 	"gogs.io/gogs/internal/auth/github"
@@ -92,9 +92,9 @@ func LoginViaLDAP(login, password string, source *LoginSource, autoRegister bool
 		username = login
 	}
 	// Validate username make sure it satisfies requirement.
-	if binding.AlphaDashDotPattern.MatchString(username) {
+	/*if binding.AlphaDashDotPattern.MatchString(username) {
 		return nil, fmt.Errorf("Invalid pattern for attribute 'username' [%s]: must be valid alpha or numeric or dash(-_) or dot characters", username)
-	}
+	}*/
 
 	if len(mail) == 0 {
 		mail = fmt.Sprintf("%s@localhost", username)
